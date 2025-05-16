@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "amap-maps": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@amap/amap-maps-mcp-server"
+      ],
+      "env": {
+        "AMAP_MAPS_API_KEY": "d6294533d9634aa37ef9068a8232d36c"
+      }
+    },
+    "server-filesystem": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/zifengchen/work/ai-lab/ai-lab/ai-lab/ai-lab-mcp-client/src/main/resources"
+      ],
+      "env": {
+      }
+    },
+    "playwright": {
+      "command": "npx.cmd",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}

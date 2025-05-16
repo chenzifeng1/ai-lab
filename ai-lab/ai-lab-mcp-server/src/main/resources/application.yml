@@ -1,0 +1,31 @@
+
+spring:
+  main:
+    banner-mode: off
+  ai:
+    mcp:
+      server:
+        name: ai-lab
+        version: 0.0.1
+server:
+  port: 8080
+
+stop:
+  order:
+    url: http://pfd-ailab.test4app.ttb.test.ke.com/api/v1/stopOrderInfo
+
+logging:
+  level:
+    io:
+      modelcontextprotocol:
+        client: WARN
+        spec: WARN
+    org.springframework.ai: DEBUG
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings
