@@ -12,7 +12,7 @@ server:
 
 stop:
   order:
-    url: http://pfd-ailab.test4app.ttb.test.ke.com/api/v1/stopOrderInfo
+    url:
 
 logging:
   level:

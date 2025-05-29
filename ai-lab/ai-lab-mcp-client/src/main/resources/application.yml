@@ -14,7 +14,7 @@ spring:
   ai:
     openai:
       api-key:
-      base-url: https://openapi-ait.ke.com
+      base-url:
     mcp:
       client:
         sse:
