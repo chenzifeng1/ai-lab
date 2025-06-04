@@ -1,8 +1,9 @@
 package com.czf.ai.lab.server.provider;
 
-import com.czf.ai.lab.server.StopOrderServer;
-import com.czf.ai.lab.server.TodoServer;
-import com.czf.ai.lab.server.WeatherService;
+import com.czf.ai.lab.server.tools.StopOrderTool;
+import com.czf.ai.lab.server.tools.TimeTool;
+import com.czf.ai.lab.server.tools.TodoTool;
+import com.czf.ai.lab.server.tools.WeatherTool;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.context.annotation.Bean;
@@ -17,15 +18,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProviderConfig {
 
+
     @Bean
-    public ToolCallbackProvider myTools(TodoServer todoServer,
-                                        WeatherService weatherService,
-                                        StopOrderServer stopOrderServer) {
+    public ToolCallbackProvider myTools(TodoTool todoTool,
+                                        WeatherTool weatherTool,
+                                        StopOrderTool stopOrderTool, TimeTool timeTool) {
+
+
         // 注册工具
         return MethodToolCallbackProvider
                 .builder()
-                .toolObjects(todoServer, weatherService, stopOrderServer)
+                .toolObjects(todoTool, weatherTool, stopOrderTool, timeTool)
                 .build();
 
     }
+
+
 }

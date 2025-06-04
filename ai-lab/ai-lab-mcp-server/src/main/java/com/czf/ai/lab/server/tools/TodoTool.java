@@ -1,7 +1,6 @@
-package com.czf.ai.lab.server;
+package com.czf.ai.lab.server.tools;
 
 import com.alibaba.fastjson2.JSONObject;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.tool.annotation.Tool;
@@ -21,9 +20,9 @@ import java.util.UUID;
  * 日期：2025/5/10
  */
 @Service
-public class TodoServer {
+public class TodoTool implements CustomMcpTool  {
 
-    Logger log = LoggerFactory.getLogger(TodoServer.class);
+    Logger log = LoggerFactory.getLogger(TodoTool.class);
 
     public static final Map<String, List<TodoTask>> todoList = new HashMap<>();
 

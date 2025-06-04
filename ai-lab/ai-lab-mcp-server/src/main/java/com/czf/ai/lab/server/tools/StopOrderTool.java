@@ -1,4 +1,4 @@
-package com.czf.ai.lab.server;
+package com.czf.ai.lab.server.tools;
 
 import com.alibaba.fastjson2.JSONObject;
 import org.springframework.ai.tool.annotation.Tool;
@@ -14,14 +14,14 @@ import org.springframework.web.client.RestClient;
  * 日期：2025/4/25
  */
 @Service
-public class StopOrderServer {
+public class StopOrderTool implements CustomMcpTool{
 
     private final RestClient restClient;
 
     @Value("${stop.order.url}")
     private String url;
 
-    public StopOrderServer() {
+    public StopOrderTool() {
         this.restClient = RestClient.create();
     }
 

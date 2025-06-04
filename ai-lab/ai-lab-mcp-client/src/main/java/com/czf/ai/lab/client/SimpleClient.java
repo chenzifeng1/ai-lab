@@ -21,11 +21,18 @@ public class SimpleClient {
 
     ChatClient.Builder chatClientBuilder;
 
+    ChatClient chatClient;
+
 
     @Autowired
     public SimpleClient(ChatClient.Builder chatClientBuilder, ToolCallbackProvider tools) {
         this.tools = tools;
         this.chatClientBuilder = chatClientBuilder;
+
+        chatClient = chatClientBuilder
+//                .defaultSystem()
+                .defaultTools(tools)
+                .build();
     }
 
     /**
@@ -34,9 +41,10 @@ public class SimpleClient {
      * @return
      */
     public String chat(String query) {
-        var chatClient = chatClientBuilder
-                .defaultTools(tools)
-                .build();
+
+
+
+
         return chatClient.prompt(query).call().content();
     }
 
@@ -44,6 +52,7 @@ public class SimpleClient {
     public FunctionCallback[] tools() {
         return tools.getToolCallbacks();
     }
+
 
 
 }

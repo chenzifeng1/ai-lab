@@ -1,11 +1,9 @@
-package com.czf.ai.lab.server;
+package com.czf.ai.lab.server.tools;
 
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-
-import java.time.LocalDateTime;
 
 /**
  * 类名：SimpleService
@@ -14,11 +12,11 @@ import java.time.LocalDateTime;
  * 日期：2025/4/24
  */
 @Service
-public class WeatherService {
+public class WeatherTool  implements CustomMcpTool {
 
     private final WebClient webClient;
 
-    public WeatherService(WebClient.Builder webClientBuilder) {
+    public WeatherTool(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder
                 .baseUrl("https://api.open-meteo.com/v1")
                 .build();

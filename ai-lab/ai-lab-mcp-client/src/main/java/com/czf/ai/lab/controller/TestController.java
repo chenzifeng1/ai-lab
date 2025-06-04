@@ -29,7 +29,13 @@ public class TestController {
     }
 
     @RequestMapping("/toolList")
-    public Object test() {
+    public Object tools() {
+        return simpleClient.tools();
+    }
+
+
+    @RequestMapping("/promptList")
+    public Object prompts() {
         return simpleClient.tools();
     }
 
